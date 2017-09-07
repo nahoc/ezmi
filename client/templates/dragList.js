@@ -16,33 +16,96 @@ Template.dragList.onRendered(function () {
 
 Template.dragList.helpers({
   backlog: function () {
-    return Tasks.find({
-      parent: "backlog",
-    });
+    const query = {
+      parent: 'backlog',
+    };
+    const options = {
+      sort: {
+        isImportant: -1,
+      }
+    };
+    const results = Tasks.find(query, options).fetch();
+    return results;
   },
   todo: function () {
-    return Tasks.find({
-      parent: "todo",
-    });
+    const query = {
+      parent: 'todo',
+    };
+    const options = {
+      sort: {
+        isImportant: -1,
+      }
+    };
+    const results = Tasks.find(query, options).fetch();
+    return results;
   },
   inProgress: function () {
-    return Tasks.find({
-      parent: "inProgress",
-    });
+    const query = {
+      parent: 'inProgress',
+    };
+    const options = {
+      sort: {
+        isImportant: -1,
+      }
+    };
+    const results = Tasks.find(query, options).fetch();
+    return results;
   },
   meetings: function () {
-    return Tasks.find({
-      parent: "meetings",
-    });
+    const query = {
+      parent: 'meetings',
+    };
+    const options = {
+      sort: {
+        isImportant: -1,
+      }
+    };
+    const results = Tasks.find(query, options).fetch();
+    return results;
   },
   blocked: function () {
-    return Tasks.find({
-      parent: "blocked",
-    });
+    const query = {
+      parent: 'blocked',
+    };
+    const options = {
+      sort: {
+        isImportant: -1,
+      }
+    };
+    const results = Tasks.find(query, options).fetch();
+    return results;
   },
   done: function () {
-    return Tasks.find({
-      parent: "done",
-    });
+    const query = {
+      parent: 'done',
+    };
+    const options = {
+      sort: {
+        isImportant: -1,
+      }
+    };
+    const results = Tasks.find(query, options).fetch();
+    return results;
+  },
+  isImportantClass: function (arg) {
+    // returns an "isImportant" class so we can style it with css
+    if (arg) {
+      return "isImportant";
+    }
   }
+});
+
+Template.dragList.events({
+  'click .deleteTask' (event) {
+    // Prevent default browser form submit
+    event.preventDefault();
+
+    // Get value from form element
+    const target = event.target;
+    const text = $(target).parent().children('.content').html();
+    const taskToDelete = Tasks.findOne({content: text}, {});
+
+    // Insert a task into the collection
+    Tasks.remove( { _id: taskToDelete._id } )
+  },
 });

@@ -3,7 +3,11 @@
     <div id='backlog' class='column'>
       <h2 class="columnTitle">Backlog</h2>
       {{#each backlog}}
-        <div class="card">{{content}}</div>
+        <div class="card">
+          <p class="content">{{content}}</p>
+          <button class="button is-outlined is-danger is-small deleteTask">X</button>
+          <span class="importantIcon {{isImportantClass(isImportant)}}"></span>
+        </div>
       {{/each}}
     </div>
     <div id='todo' class='column'>
