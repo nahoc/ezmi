@@ -1,5 +1,15 @@
 <template name="actions">
   <div class="columns">
+    <div class="select">
+      <select id="selectTask">
+        <option value="backlog">Backlog</option>
+        <option value="todo">TODO</option>
+        <option value="inProgress">In Progress</option>
+        <option value="meetings">Meetings</option>
+        <option value="blocked">Blocked</option>
+        <option value="done">Done</option>
+      </select>
+    </div>
     <div class="field has-addons">
       <div class="control">
         <input id="taskInput" class="input" type="text" placeholder="Tâche">

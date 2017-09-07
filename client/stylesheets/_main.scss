@@ -70,9 +70,19 @@
 }
 
 .columnTitle {
-    margin-bottom: 6px;
+    margin-bottom: 10px;
     font-weight: bold;
     text-transform: uppercase;
     opacity: 0.8;
     text-align: center;
+}
+
+#selectTask {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+#taskInput {
+    border-radius: 0px;
+    margin-left: -1px;
 }
