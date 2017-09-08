@@ -1,23 +1,20 @@
 .card {
     padding: 8px;
-    padding-right: 38px;
+    padding-left: 12px; //padding-right: 38px;
     position: relative;
     overflow: auto;
     &:hover {
-        .deleteTask {
-            opacity: 1;
-        }
         cursor: move;
     }
 }
 
 .deleteTask {
-    position: absolute!important;
+    /*position: absolute!important;
     top: 8px;
     right: 8px;
     padding: 0px 5px!important;
     height: 19px!important;
-    opacity: 0;
+    opacity: 0;*/
 }
 
 #dragList .column {
@@ -39,7 +36,7 @@
 }
 
 #meetings {
-    border-top: 3px solid #f1c40f;
+    border-top: 3px solid $sunFlower;
 }
 
 #blocked {
@@ -50,7 +47,12 @@
     border-top: 3px solid $emerald;
 }
 
+.input {
+    min-width: 420px;
+}
+
 .importantIcon {
+    display: none;
     /*display: block;
     position: absolute;
     right: 8px;
@@ -87,28 +89,57 @@
     margin-left: -1px;
 }
 
-// COLORS
-.color {
-    display: inline-block;
-    width: 30px;
-    height: 30px;
+.anti-modal-box {
+    width: 100%;
+    max-width: 920px;
 }
 
+#modalTaskId {
+    display: none;
+}
+
+// COLORS
 .colorCode {
     border-left: 4px solid $abestos;
 }
 
-.colorRed {
-    background: $alizarin;
-    border-color: $alizarin;
+.column {
+    .colorRed {
+        border-color: $alizarin!important;
+        p {
+            color: $alizarin;
+        }
+    }
+    .colorBlue {
+        border-color: $peterRiver!important;
+        p {
+            color: $peterRiver;
+        }
+    }
+    .colorGreen {
+        border-color: $emerald!important;
+        p {
+            color: $emerald;
+        }
+    }
 }
 
-.colorBlue {
-    background: blue;
-    border-color: blue;
-}
-
-.colorGreen {
-    background: $emerald;
-    border-color: $emerald;
+.colors {
+    .color {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+    }
+    .colorGrey {
+        background: $abestos!important;
+    }
+    .colorRed {
+        background: $alizarin!important;
+    }
+    .colorBlue {
+        background: $peterRiver!important;
+    }
+    .colorGreen {
+        background: $emerald!important;
+    }
 }

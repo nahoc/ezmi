@@ -8,6 +8,7 @@ import {
 Template.dragList.onCreated(function dragListOnCreated() {
   this.state = new ReactiveDict();
   Meteor.subscribe('tasks');
+  Meteor.subscribe('comments');
 });
 
 Template.dragList.onRendered(function () {
@@ -106,6 +107,18 @@ Template.dragList.helpers({
     if (arg) {
       return "isImportant";
     }
+  },
+  taskComments: function () {
+    const query = {
+      taskId: 'J9qKpNQczZX2cBvgu',
+    };
+    const options = {
+      sort: {
+        date: -1,
+      }
+    };
+    const results = Comments.find(query, options).fetch();
+    return results;
   }
 });
 
@@ -113,6 +126,14 @@ Template.dragList.events({
   'click .deleteTask' (event) {
     // Prevent default browser form submit
     event.preventDefault();
+
+    AntiModals.confirm({
+      title: 'Another',
+      message: 'Echo?',
+      ok: 'Indeed',
+      cancel: 'Nope',
+      closer: true,
+    });
 
     // Get value from form element
     const target = event.target;
@@ -127,10 +148,10 @@ Template.dragList.events({
     })
   },
   'click .card' (event, template) {
-      AntiModals.overlay("modal");
-      $('#modalTaskId').html(this._id);
-      $('#modalTaskTitle').html(this.content);
-      $('#modalTaskDate').html(this.date);
-      $('#modalTaskParent').html(this.parent);
+    AntiModals.overlay("modal");
+    $('#modalTaskId').html(this._id);
+    $('#modalTaskContent').html(this.content);
+    $('#modalTaskDate').html(this.date);
+    $('#modalTaskParent').html(this.parent);
   }
 });

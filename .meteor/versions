@@ -2,6 +2,7 @@ ahref:dragula@3.5.4
 aldeed:collection2-core@2.0.1
 allow-deny@1.0.6
 anti:modals@0.4.0
+autopublish@1.0.7
 autoupdate@1.3.12
 babel-compiler@6.20.0
 babel-runtime@1.0.1
@@ -38,6 +39,7 @@ html-tools@1.0.11
 htmljs@1.0.11
 http@1.2.12
 id-map@1.0.9
+insecure@1.0.7
 jquery@1.11.10
 launch-screen@1.1.1
 livedata@1.0.18
@@ -67,6 +69,7 @@ reactive-var@1.0.11
 reload@1.1.11
 retry@1.0.9
 routepolicy@1.0.12
+session@1.1.7
 shell-server@0.2.4
 spacebars@1.0.15
 spacebars-compiler@1.1.3
