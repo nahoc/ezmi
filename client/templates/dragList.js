@@ -11,7 +11,21 @@ Template.dragList.onCreated(function dragListOnCreated() {
 });
 
 Template.dragList.onRendered(function () {
-  dragula([document.querySelector('#backlog'), document.querySelector('#todo'), document.querySelector('#inProgress'), document.querySelector('#meetings'), document.querySelector('#blocked'), document.querySelector('#done')]);
+  dragula([document.querySelector('#backlog'), document.querySelector('#todo'), document.querySelector('#inProgress'), document.querySelector('#meetings'), document.querySelector('#blocked'), document.querySelector('#done')]).on('drop', function (el) {
+    const text = $(el).children('.content').html();
+    const parentId = $(el).parent().attr('id');
+    const taskToUpdate = Tasks.findOne({
+      content: text
+    }, {});
+
+    Tasks.update({
+      _id: taskToUpdate._id
+    }, {
+      $set: {
+        parent: parentId,
+      }
+    });
+  });
 });
 
 Template.dragList.helpers({
@@ -103,9 +117,13 @@ Template.dragList.events({
     // Get value from form element
     const target = event.target;
     const text = $(target).parent().children('.content').html();
-    const taskToDelete = Tasks.findOne({content: text}, {});
+    const taskToDelete = Tasks.findOne({
+      content: text
+    }, {});
 
     // Insert a task into the collection
-    Tasks.remove( { _id: taskToDelete._id } )
+    Tasks.remove({
+      _id: taskToDelete._id
+    })
   },
 });

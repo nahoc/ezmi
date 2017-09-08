@@ -1,0 +1,19 @@
+{
+  "electron": {
+    "name": "MyApp",
+    "version": "0.1.0",
+    "description": "A really cool app.",
+    "height": 768,
+    "width": 1024,
+    "frame": true,
+    "title-bar-style": "hidden",
+    "resizable": true,
+    /*"builds": [{
+      "platform": "win32",
+      "arch": "ia32"
+    }],*/
+    "scripts": {
+      "start": "meteor --settings settings.json"
+    }
+  }
+}
