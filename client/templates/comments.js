@@ -5,11 +5,6 @@ import {
   ReactiveVar
 } from 'meteor/reactive-var';
 
-Template.comments.onCreated(function commentsOnCreated() {
-  this.state = new ReactiveDict();
-  Meteor.subscribe('comments');
-});
-
 Template.comments.events({
   'click #addComment, keypress input' (event) {
     if (event.which === 13 || event.type === 'click') {

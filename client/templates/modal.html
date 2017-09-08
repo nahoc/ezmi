@@ -2,11 +2,13 @@
   <div class="anti-modal-box">
     <div class="anti-modal-body">
       <button class="button is-outlined is-danger is-small is-pulled-right deleteTask">Supprimer</button>
-      <h2 id="modalTaskId">{{modalTaskId}}</h2>
-      <h2 class="title" id="modalTaskContent">{{modalTaskTitle}}</h2>
-      <h3 class="subtitle" id="modalTaskParent">{{modalTaskParent}}</h3>
+      <h2 id="modalTaskId"></h2>
+      <h2 class="title" id="modalTaskContent">{{#with getClickedTask}} {{content}} {{/with}}
+      </h2>
+      <h3 class="subtitle" id="modalTaskParent"></h3>
       <p id="modalTaskDate"></p>
-      {{>colorCode}} {{>comments}}
+      {{>colorCode}}
+      <!--{{>comments}}-->
     </div>
   </div>
 </template>

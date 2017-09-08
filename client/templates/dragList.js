@@ -5,7 +5,10 @@ import {
   ReactiveVar
 } from 'meteor/reactive-var';
 
+CLICKED_TASK = "";
+
 Template.dragList.onCreated(function dragListOnCreated() {
+  Session.set('showModal', false);
   this.state = new ReactiveDict();
   Meteor.subscribe('tasks');
   Meteor.subscribe('comments');
@@ -30,6 +33,9 @@ Template.dragList.onRendered(function () {
 });
 
 Template.dragList.helpers({
+  'showModal': function () {
+    return Session.get('showModal');
+  },
   backlog: function () {
     const query = {
       parent: 'backlog',
@@ -108,18 +114,6 @@ Template.dragList.helpers({
       return "isImportant";
     }
   },
-  taskComments: function () {
-    const query = {
-      taskId: 'J9qKpNQczZX2cBvgu',
-    };
-    const options = {
-      sort: {
-        date: -1,
-      }
-    };
-    const results = Comments.find(query, options).fetch();
-    return results;
-  }
 });
 
 Template.dragList.events({
@@ -127,13 +121,13 @@ Template.dragList.events({
     // Prevent default browser form submit
     event.preventDefault();
 
-    AntiModals.confirm({
+    /*AntiModals.confirm({
       title: 'Another',
       message: 'Echo?',
       ok: 'Indeed',
       cancel: 'Nope',
       closer: true,
-    });
+    });*/
 
     // Get value from form element
     const target = event.target;
@@ -148,10 +142,13 @@ Template.dragList.events({
     })
   },
   'click .card' (event, template) {
-    AntiModals.overlay("modal");
-    $('#modalTaskId').html(this._id);
-    $('#modalTaskContent').html(this.content);
-    $('#modalTaskDate').html(this.date);
-    $('#modalTaskParent').html(this.parent);
+    CLICKED_TASK = this._id;
+    console.log(CLICKED_TASK);
+    Session.set('showModal', true); // Show modal
+    
+    //$('#modalTaskId').html(this._id);
+    //$('#modalTaskContent').html(this.content);
+    //$('#modalTaskDate').html(this.date);
+    //$('#modalTaskParent').html(this.parent);
   }
 });
