@@ -24,3 +24,4 @@ meson:electron
 fourseven:scss
 aldeed:collection2-core@2.0.0
 reactive-dict
+anti:modals

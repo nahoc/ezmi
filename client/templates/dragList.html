@@ -3,7 +3,7 @@
     <div id='backlog' class='column'>
       <h2 class="columnTitle">Backlog</h2>
       {{#each backlog}}
-      <div class="card">
+      <div class="card colorCode {{colorCode}}">
         <p class="content">{{content}}</p>
         <button class="button is-outlined is-danger is-small deleteTask">X</button>
         <span class="importantIcon {{isImportantClass(isImportant)}}"></span>
@@ -13,7 +13,7 @@
     <div id='todo' class='column'>
       <h2 class="columnTitle">Todo</h2>
       {{#each todo}}
-      <div class="card">
+      <div class="card colorCode {{colorCode}}">
         <p class="content">{{content}}</p>
         <button class="button is-outlined is-danger is-small deleteTask">X</button>
         <span class="importantIcon {{isImportantClass(isImportant)}}"></span>
@@ -23,7 +23,7 @@
     <div id='inProgress' class='column'>
       <h2 class="columnTitle">In progress</h2>
       {{#each inProgress}}
-      <div class="card">
+      <div class="card colorCode {{colorCode}}">
         <p class="content">{{content}}</p>
         <button class="button is-outlined is-danger is-small deleteTask">X</button>
         <span class="importantIcon {{isImportantClass(isImportant)}}"></span>
@@ -33,7 +33,7 @@
     <div id='meetings' class='column'>
       <h2 class="columnTitle">Meetings</h2>
       {{#each meetings}}
-      <div class="card">
+      <div class="card colorCode {{colorCode}}">
         <p class="content">{{content}}</p>
         <button class="button is-outlined is-danger is-small deleteTask">X</button>
         <span class="importantIcon {{isImportantClass(isImportant)}}"></span>
@@ -43,7 +43,7 @@
     <div id='blocked' class='column'>
       <h2 class="columnTitle">Blocked</h2>
       {{#each blocked}}
-      <div class="card">
+      <div class="card colorCode {{colorCode}}">
         <p class="content">{{content}}</p>
         <button class="button is-outlined is-danger is-small deleteTask">X</button>
         <span class="importantIcon {{isImportantClass(isImportant)}}"></span>
@@ -53,7 +53,7 @@
     <div id='done' class='column'>
       <h2 class="columnTitle">Done</h2>
       {{#each done}}
-      <div class="card">
+      <div class="card colorCode {{colorCode}}">
         <p class="content">{{content}}</p>
         <button class="button is-outlined is-danger is-small deleteTask">X</button>
         <span class="importantIcon {{isImportantClass(isImportant)}}"></span>

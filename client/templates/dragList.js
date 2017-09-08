@@ -126,4 +126,11 @@ Template.dragList.events({
       _id: taskToDelete._id
     })
   },
+  'click .card' (event, template) {
+      AntiModals.overlay("modal");
+      $('#modalTaskId').html(this._id);
+      $('#modalTaskTitle').html(this.content);
+      $('#modalTaskDate').html(this.date);
+      $('#modalTaskParent').html(this.parent);
+  }
 });

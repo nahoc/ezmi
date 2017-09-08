@@ -33,6 +33,11 @@ TasksSchema = new SimpleSchema({
     type: Boolean,
     label: 'If the task is important or not.',
     optional: true,
+  },
+  colorCode: {
+    type: String,
+    label: 'The color code of the task.',
+    optional: true,
   }
 });
 

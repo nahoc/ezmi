@@ -27,15 +27,15 @@
 }
 
 #backlog {
-    border-top: 3px solid #7f8c8d;
+    border-top: 3px solid $abestos;
 }
 
 #todo {
-    border-top: 3px solid #2c3e50;
+    border-top: 3px solid $midnightBlue;
 }
 
 #inProgress {
-    border-top: 3px solid #e67e22;
+    border-top: 3px solid $carrot;
 }
 
 #meetings {
@@ -43,11 +43,11 @@
 }
 
 #blocked {
-    border-top: 3px solid #e74c3c;
+    border-top: 3px solid $alizarin;
 }
 
 #done {
-    border-top: 3px solid #2ecc71;
+    border-top: 3px solid $emerald;
 }
 
 .importantIcon {
@@ -85,4 +85,30 @@
 #taskInput {
     border-radius: 0px;
     margin-left: -1px;
+}
+
+// COLORS
+.color {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+}
+
+.colorCode {
+    border-left: 4px solid $abestos;
+}
+
+.colorRed {
+    background: $alizarin;
+    border-color: $alizarin;
+}
+
+.colorBlue {
+    background: blue;
+    border-color: blue;
+}
+
+.colorGreen {
+    background: $emerald;
+    border-color: $emerald;
 }
