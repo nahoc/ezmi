@@ -1,5 +1,6 @@
 <template name="dragList">
-  <h1 id="clickedTask"></h1>
+  {{> actions}}
+  <br/>
   <div id="dragList" class='columns'>
     <div id='backlog' class='column'>
       <h2 class="columnTitle">Backlog</h2>
@@ -50,7 +51,4 @@
       {{/each}}
     </div>
   </div>
-   <!--{{#if showModal }}
-    {{> modal }}
-  {{/if}}-->
 </template>

@@ -1,3 +1,7 @@
+html {
+    overflow: hidden;
+}
+
 .card {
     padding: 8px;
     padding-left: 12px; //padding-right: 38px;
@@ -11,36 +15,16 @@
 .container {
     max-width: 100%!important;
     width: auto!important;
-    padding: 30px;
+    padding: 50px;
 }
 
-.body {
-    margin-top: 52px!important;
+.main {
+    padding-top: 92px!important;
 }
 
-.deleteTask {
-    /*position: absolute!important;
-    top: 8px;
-    right: 8px;
-    padding: 0px 5px!important;
-    height: 19px!important;
-    opacity: 0;*/
-}
-
-#commentsList {
-    li {
-        margin-bottom: 4px;
-    }
-    .is-static {
-        pointer-events: auto;
-        &:hover {
-            cursor: default;
-        }
-    }
-    .is-date {
-        margin-right: 16px;
-        margin-top: 2px;
-    }
+#modalTaskDate {
+    margin-right: 16px;
+    margin-top: 3px;
 }
 
 .is-100 {
@@ -54,6 +38,7 @@
 #dragList .column {
     background: #f5f5f5;
     margin: 3px;
+    padding-bottom: 20px;
     border-radius: 4px;
     &:first-child {
         margin-left: 0;
@@ -112,7 +97,8 @@
 }
 
 .columnTitle {
-    margin-bottom: 10px;
+    margin-top: 4px;
+    margin-bottom: 18px;
     font-weight: bold;
     text-transform: uppercase;
     opacity: 0.8;

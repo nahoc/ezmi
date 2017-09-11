@@ -27,3 +27,5 @@ reactive-dict
 anti:modals
 session
 momentjs:moment
+kadira:flow-router
+kadira:blaze-layout

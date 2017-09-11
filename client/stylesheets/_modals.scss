@@ -1,6 +1,6 @@
 .anti-modal-box {
     width: 100%;
-    max-width: 920px;
+    max-width: 84%;
 }
 
 #modalTaskId {
@@ -8,6 +8,7 @@
 }
 
 .anti-modal-body {
+    padding: 48px;
     border-left: 8px solid transparent;
     .colorRed {
         color: $alizarin;

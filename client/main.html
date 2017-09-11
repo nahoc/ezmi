@@ -5,10 +5,8 @@
 </head>
 
 <body>
-  {{>navigation}} 
-  {{> stripes}}
-  <div class="container body">
-    {{> actions}}
-    <br/> {{> dragList}}
-  </div>
+  {{>navigation}} {{> stripes}}
+  <main class="container main">
+    {{> Template.dynamic template=main}}
+  </main>
 </body>

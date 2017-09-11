@@ -1,3 +1,5 @@
+BlazeLayout.setRoot('main');
+
 import {
   Template
 } from 'meteor/templating';

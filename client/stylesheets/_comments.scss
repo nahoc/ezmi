@@ -1,0 +1,15 @@
+#commentsList {
+    li {
+        margin-bottom: 4px;
+    }
+    .is-static {
+        pointer-events: auto;
+        &:hover {
+            cursor: default;
+        }
+    }
+    .is-date {
+        margin-right: 16px;
+        margin-top: 3px;
+    }
+}

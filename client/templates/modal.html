@@ -2,13 +2,12 @@
   <div class="anti-modal-box">
     <div class="anti-modal-body {{getClickedTask.colorCode}}">
       <button class="button is-outlined is-danger is-small is-pulled-right deleteTask">Supprimer la tâche</button>
+      <!-- date de la tâche -->
+      <small id="modalTaskDate" class="is-small is-date is-static is-pulled-right">{{formatDate getClickedTask.date}}</small>
       <h2 id="modalTaskId">{{getClickedTask._id}}</h2>
       <h2 class="title {{getClickedTask.colorCode}}" id="modalTaskContent">{{getClickedTask.content}} <span class="colorGrey">- {{getClickedTask.parent}}</span></h2>
       <!--<h3 class="subtitle" id="modalTaskParent">{{getClickedTask.parent}}</h3>-->
-      {{>taskDescription}}
-      <p id="modalTaskDate">{{getClickedTask.date}}</p>
-      {{>colorCode}}
-      {{>comments}}
+      {{>taskDescription}} {{>colorCode}} {{>comments}}
     </div>
   </div>
 </template>
