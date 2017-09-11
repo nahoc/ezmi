@@ -5,7 +5,7 @@ import {
   ReactiveVar
 } from 'meteor/reactive-var';
 
-//CLICKED_TASK = "";
+CLICKED_TASK = "";
 
 Template.dragList.onCreated(function dragListOnCreated() {
   this.state = new ReactiveDict();
@@ -143,6 +143,7 @@ Template.dragList.events({
   },
   'click .card' (event, template) {
     let clickedTaskId = this._id;
+    CLICKED_TASK = this._id;
     Session.set('clickedTaskArray', Tasks.find({
       _id: clickedTaskId,
     }).fetch());

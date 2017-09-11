@@ -15,9 +15,9 @@
   <div class="field">
     <ul id="commentsList">
       {{#each getClickedTaskComments}}
-      <li class="button is-static is-100 is-block">
+      <li class="button is-static is-100 is-block is-comment">
         <span class="is-pulled-left">{{content}}</span>
-        <button class="button is-outlined is-danger is-small is-pulled-right deleteTask">Supprimer</button>
+        <button class="button is-outlined is-danger is-small is-pulled-right delete-comment">Supprimer</button>
         <small class="is-small is-date is-pulled-right">{{formatDate date}}</small>
 
       </li>

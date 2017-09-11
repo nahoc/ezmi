@@ -33,12 +33,34 @@ Template.comments.events({
         date: new Date(),
       });
 
+      // refresh
       Session.set('clickedTaskCommentsArray', Comments.find({
         taskId: taskId,
-      }, { sort: { 'date' : -1 }},).fetch());
+      }, {
+        sort: {
+          'date': -1
+        }
+      }, ).fetch());
 
       // Clear form
       $('#commentInput').val("");
     }
+  },
+  'click .delete-comment' (event) {
+    const parent = $(event.target).closest('.anti-modal-body');
+    const taskId = $(parent).find('#modalTaskId').html();
+
+    Comments.remove({
+      _id: this._id,
+    });
+
+    // refresh
+    Session.set('clickedTaskCommentsArray', Comments.find({
+      taskId: taskId,
+    }, {
+      sort: {
+        'date': -1
+      }
+    }, ).fetch());
   },
 });

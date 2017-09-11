@@ -27,6 +27,7 @@ TasksSchema = new SimpleSchema({
   description: {
     type: String,
     label: 'The description of the task.',
+    optional: true,
   },
   date: {
     type: Date,
