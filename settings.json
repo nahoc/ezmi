@@ -1,5 +1,5 @@
 {
-  "electron": {
+  /*"electron": {
     "name": "MyApp",
     "version": "0.1.0",
     "description": "A really cool app.",
@@ -8,12 +8,12 @@
     "frame": true,
     "title-bar-style": "hidden",
     "resizable": true,
-    /*"builds": [{
+    "builds": [{
       "platform": "win32",
       "arch": "ia32"
-    }],*/
-    "scripts": {
-      "start": "meteor --settings settings.json"
-    }
+    }],
+  }*/
+  "scripts": {
+    "start": "meteor --settings settings.json"
   }
 }

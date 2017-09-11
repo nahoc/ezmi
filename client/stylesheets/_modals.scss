@@ -1,0 +1,41 @@
+.anti-modal-box {
+    width: 100%;
+    max-width: 920px;
+}
+
+#modalTaskId {
+    display: none;
+}
+
+.anti-modal-body {
+    border-left: 8px solid transparent;
+    .colorRed {
+        color: $alizarin;
+    }
+    .colorBlue {
+        color: $peterRiver;
+    }
+    .colorGreen {
+        color: $emerald;
+    }
+    .colorGrey {
+        color: $normalText;
+    }
+}
+
+.anti-modal-overlay .anti-modal-box {
+    border: 0;
+    box-shadow: none;
+    .colorRed {
+        border-color: $alizarin;
+    }
+    .colorBlue {
+        border-color: $peterRiver;
+    }
+    .colorGreen {
+        border-color: $emerald;
+    }
+    .colorGrey {
+        border-color: $abestos;
+    }
+}

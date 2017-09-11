@@ -16,18 +16,18 @@ Template.taskDescription.helpers({
 // events
 Template.taskDescription.events({
   'click #addTaskDescription' (event) {
-
     // Prevent default browser form submit
     event.preventDefault();
+    
+    // add a loading animation to button
     $(event.target).addClass('is-loading');
 
     // Get value from form element
     const target = event.target;
     const text = $('#taskDescriptionInput').val();
     let clickedTaskId = Session.get('clickedTaskArray')[0]._id;
-    //const parent = $("#selectTask").find(":selected").val();
 
-    // Insert a task into the collection
+    // Update a task's description
     Tasks.update({
       _id: clickedTaskId,
     }, {
@@ -39,7 +39,5 @@ Template.taskDescription.events({
     $(event.target).removeClass('is-loading');
     $(event.target).addClass('is-success');
     $(event.target).html("Description enregistrée!");
-    // Clear form
-    //$('#taskDescriptionInput').val("");
   }
 });

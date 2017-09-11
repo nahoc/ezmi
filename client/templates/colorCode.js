@@ -13,5 +13,9 @@ Template.colorCode.events({
         colorCode: clickedColor,
       }
     });
+
+    Session.set('clickedTaskArray', Tasks.find({
+      _id: id,
+    }).fetch());
   },
 });
