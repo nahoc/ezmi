@@ -24,6 +24,10 @@ TasksSchema = new SimpleSchema({
     type: String,
     label: 'The parent of the task.',
   },
+  description: {
+    type: String,
+    label: 'The description of the task.',
+  },
   date: {
     type: Date,
     label: 'Date the task was created.',

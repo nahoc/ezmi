@@ -5,6 +5,15 @@ import {
   ReactiveVar
 } from 'meteor/reactive-var';
 
+Template.comments.helpers({
+  getClickedTaskComments: function () {
+    let results = Session.get('clickedTaskCommentsArray');
+    console.log("2");
+    console.log(results);
+    return results;
+  },
+});
+
 Template.comments.events({
   'click #addComment, keypress input' (event) {
     if (event.which === 13 || event.type === 'click') {
@@ -23,6 +32,10 @@ Template.comments.events({
         taskId: taskId,
         date: new Date(),
       });
+
+      Session.set('clickedTaskCommentsArray', Comments.find({
+        taskId: taskId,
+      }, { sort: { 'date' : -1 }},).fetch());
 
       // Clear form
       $('#commentInput').val("");

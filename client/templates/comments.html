@@ -2,7 +2,7 @@
   <div class="field">
     <label class="label">Commentaire(s):</label>
     <div class="field has-addons">
-      <div class="control">
+      <div class="control is-100">
         <input id="commentInput" class="input" type="text" placeholder="Écrire un commentaire">
       </div>
       <div class="control">
@@ -11,5 +11,17 @@
     </button>
       </div>
     </div>
+  </div>
+  <div class="field">
+    <ul id="commentsList">
+      {{#each getClickedTaskComments}}
+      <li class="button is-static is-100 is-block">
+        <span class="is-pulled-left">{{content}}</span>
+        <button class="button is-outlined is-danger is-small is-pulled-right deleteTask">Supprimer</button>
+        <small class="is-small is-date is-pulled-right">{{formatDate date}}</small>
+
+      </li>
+      {{/each}}
+    </ul>
   </div>
 </template>

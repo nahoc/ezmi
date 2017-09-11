@@ -5,11 +5,11 @@ import {
   ReactiveVar
 } from 'meteor/reactive-var';
 
-CLICKED_TASK = "";
+//CLICKED_TASK = "";
 
 Template.dragList.onCreated(function dragListOnCreated() {
-  Session.set('showModal', false);
   this.state = new ReactiveDict();
+  Session.set('showModal', false);
   Meteor.subscribe('tasks');
   Meteor.subscribe('comments');
 });
@@ -130,11 +130,11 @@ Template.dragList.events({
     });*/
 
     // Get value from form element
-    const target = event.target;
+    /*const target = event.target;
     const text = $(target).parent().children('.content').html();
     const taskToDelete = Tasks.findOne({
       content: text
-    }, {});
+    }, {});*/
 
     // Insert a task into the collection
     Tasks.remove({
@@ -142,13 +142,18 @@ Template.dragList.events({
     })
   },
   'click .card' (event, template) {
-    CLICKED_TASK = this._id;
-    console.log(CLICKED_TASK);
-    Session.set('showModal', true); // Show modal
-    
-    //$('#modalTaskId').html(this._id);
-    //$('#modalTaskContent').html(this.content);
-    //$('#modalTaskDate').html(this.date);
-    //$('#modalTaskParent').html(this.parent);
+    let clickedTaskId = this._id;
+    Session.set('clickedTaskArray', Tasks.find({
+      _id: clickedTaskId,
+    }).fetch());
+    Session.set('clickedTaskCommentsArray', Comments.find({
+      taskId: clickedTaskId,
+    }, {
+      sort: {
+        'date': -1
+      }
+    }, ).fetch());
+    Session.set('showModal', true);
+    AntiModals.overlay('modal');
   }
 });

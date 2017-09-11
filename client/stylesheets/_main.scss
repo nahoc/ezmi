@@ -17,6 +17,30 @@
     opacity: 0;*/
 }
 
+#commentsList {
+    li {
+        margin-bottom: 4px;
+    }
+    .is-static {
+        pointer-events: auto;
+        &:hover {
+            cursor: default;
+        }
+    }
+    .is-date {
+        margin-right: 16px;
+        margin-top: 2px;
+    }
+}
+
+.is-100 {
+    width: 100%;
+}
+
+.is-block {
+    display: block;
+}
+
 #dragList .column {
     background: #f5f5f5;
     margin: 3px;
