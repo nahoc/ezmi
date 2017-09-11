@@ -5,6 +5,10 @@ import {
   ReactiveVar
 } from 'meteor/reactive-var';
 
+Template.actions.onRendered(function () {
+  $('#taskInput').focus();
+});
+
 Template.actions.events({
   'click #addTask, keypress input' (event) {
     if (event.which === 13 || event.type === 'click') {

@@ -121,21 +121,6 @@ Template.dragList.events({
     // Prevent default browser form submit
     event.preventDefault();
 
-    /*AntiModals.confirm({
-      title: 'Another',
-      message: 'Echo?',
-      ok: 'Indeed',
-      cancel: 'Nope',
-      closer: true,
-    });*/
-
-    // Get value from form element
-    /*const target = event.target;
-    const text = $(target).parent().children('.content').html();
-    const taskToDelete = Tasks.findOne({
-      content: text
-    }, {});*/
-
     // Insert a task into the collection
     Tasks.remove({
       _id: taskToDelete._id
@@ -144,6 +129,7 @@ Template.dragList.events({
   'click .card' (event, template) {
     let clickedTaskId = this._id;
     CLICKED_TASK = this._id;
+
     Session.set('clickedTaskArray', Tasks.find({
       _id: clickedTaskId,
     }).fetch());
