@@ -7,4 +7,4 @@ Simple Trello-like app build with Meteor.js
 * Drag-and-drop tasks from one board to another
 * Color codes
 * Write comments on a specific task
-* ~~Add a description~~ redoing
+* Add a description to a task
