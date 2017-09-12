@@ -7,31 +7,30 @@
     </div>
 
     <div id="navMenuTransparentExample" class="navbar-menu">
+      {{#if currentUser}}
       <div class="navbar-end">
         <div class="navbar-item">
-          <div class="field is-grouped">
+          <div class="field">
             <p class="control">
-              <a class="bd-tw-button button" href="/register">
-  <!--<span class="icon">
-    <i class="fa fa-user"></i>
-  </span>-->
-  <span>
-    Créer un compte
-  </span>
-</a>
-
-            </p>
-            <p class="control">
-              <a class="button is-primary" href="/login">
-             <!-- <span class="icon">
-                <i class="fa fa-sign-in"></i>
-              </span>-->
-              <span>Se connecter</span>
-            </a>
+              <a id="logout" class="button is-primary" href="/login">Se déconnecter</a>
             </p>
           </div>
         </div>
       </div>
+      {{else}}
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="field is-grouped">
+            <p class="control">
+              <a class="bd-tw-button button" href="/register">Créer un compte</a>
+            </p>
+            <p class="control">
+              <a class="button is-primary" href="/login">Se connecter</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      {{/if}}
     </div>
   </nav>
 </template>
