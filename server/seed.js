@@ -4,7 +4,7 @@ import {
 import Tasks from '../collections/tasks';
 
 // Patterns
-const tasks = [{
+/*const tasks = [{
     content: 'Chasser les hommes',
     parent: 'backlog',
   },
@@ -41,4 +41,4 @@ tasks.forEach(({
     content,
     parent,
   });
-});
+});*/
